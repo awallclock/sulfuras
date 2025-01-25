@@ -1,6 +1,12 @@
 <title>RISE MOUNTATINS?</title>
 <center></center><body>
+<audio autoplay>
+  <source src="rise.ogg" type="audio/ogg">
+</audio>
+
     <script type=text/javascript>
+    
+        let playSound = () => new Audio("rise.ogg").play()
 
         /*
         Snow Fall Java Script
@@ -29,7 +35,7 @@
         //the smaller the size the more you can use!
 
         // Configure below - change number of snow to render
-        Amount=400;
+        Amount=200;
 
         Ypos=new Array();
         Xpos=new Array();
@@ -51,7 +57,7 @@
             for (i = 0; i < Amount; i++){
                 var P=Math.floor(Math.random()*grphcs.length);
                 rndPic=grphcs[P];
-                document.write('<img id="si'+i+'" src="'+rndPic+'" style="position:absolute;top:0px;left:0px">');
+                document.write('<img id="si'+i+'" src="'+rndPic+'" style="position:absolute;top:0px;left:0px" onclick="playSound()">');
             }
             document.write('</div></div>');
         }
@@ -71,7 +77,7 @@
             var wscrll=(ns||ns6)?window.pageXOffset:document.body.scrollLeft;
             for (i=0; i < Amount; i++){
                 sy = Speed[i]*Math.sin(90*Math.PI/1200);
-                sx = Speed[i]*Math.cos(Cstep[i]/2);
+                sx = Speed[i]*Math.cos(Cstep[i]/10);
                 Ypos[i]+=sy;
                 Xpos[i]+=sx;
                 if (Ypos[i] > WinHeight){
@@ -93,7 +99,7 @@
                 }
                 Cstep[i]+=Step[i];
             }
-            setTimeout('fall()',5);
+            setTimeout('fall()', 5);
         }
         window.onload=fall()
         //-->
