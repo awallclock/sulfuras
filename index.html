@@ -1,12 +1,12 @@
 <title>GIVE HAMMER</title>
 <center></center><body>
 <audio autoplay>
-  <source src="rise.ogg" type="audio/ogg">
+  <source src="sulfuras-will-be-yours.ogg" type="audio/ogg">
 </audio>
 
     <script type=text/javascript>
     
-        let playSound = () => new Audio("rise.ogg").play()
+        let playSound = () => new Audio("sulfuras-will-be-yours.ogg").play()
 
         /*
         Snow Fall Java Script
@@ -18,13 +18,13 @@
         //Configure below - change URL path to the snow image
 
         Image0=new Image();
-        Image0.src=grphcs[0]="sulfuras.jpg";
+        Image0.src="sulfuras.jpg";
 
         //Smoothness depends on image file size,
         //the smaller the size the more you can use!
 
         // Configure below - change number of snow to render
-        Amount=400;
+        Amount=1000;
 
         Ypos=new Array();
         Xpos=new Array();
@@ -36,13 +36,13 @@
 
         if (ns){
             for (i = 0; i < Amount; i++){
-                document.write("<LAYER NAME='sn"+i+"' LEFT=0 TOP=0><img src="+Image0+"></LAYER>");
+                document.write("<LAYER NAME='sn"+i+"' LEFT=0 TOP=0><img src="+Image0.src+"></LAYER>");
             }
         }
         else{
             document.write('<div style="position:absolute;top:0px;left:0px"><div style="position:relative">');
             for (i = 0; i < Amount; i++){
-                document.write('<img id="si'+i+'" src="'+Image0+'" style="position:absolute;top:0px;left:0px" onclick="playSound()">');
+                document.write('<img id="si'+i+'" src="'+Image0.src+'" style="position:absolute;top:0px;left:0px" onclick="playSound()">');
             }
             document.write('</div></div>');
         }
@@ -61,8 +61,8 @@
             var hscrll=(ns||ns6)?window.pageYOffset:document.body.scrollTop;
             var wscrll=(ns||ns6)?window.pageXOffset:document.body.scrollLeft;
             for (i=0; i < Amount; i++){
-                sy = Speed[i]*Math.sin(90*Math.PI/1200);
-                sx = Speed[i]*Math.cos(Cstep[i]/10);
+                sy = Speed[i]*Math.sin(90*Math.PI/600);
+                sx = Speed[i]*Math.cos(Cstep[i]/2);
                 Ypos[i]+=sy;
                 Xpos[i]+=sx;
                 if (Ypos[i] > WinHeight){
